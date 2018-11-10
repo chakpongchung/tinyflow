@@ -36,9 +36,9 @@ ifeq ($(UNAME_S), Darwin)
 else
 	WHOLE_ARCH= --whole-archive
 	NO_WHOLE_ARCH= --no-whole-archive
-	CFLAGS  += -I$(TORCH_PATH)/install/include -I$(TORCH_PATH)/install/include/TH \
-			   -I$(TORCH_PATH)/install/include/THC/
-	LDFLAGS += -L$(TORCH_PATH)/install/lib -lluajit -lluaT -lTH -lTHC
+	CFLAGS  += -I$(TORCH_PATH)/install/include -I$(TORCH_PATH)/install/include/TH
+			   
+	LDFLAGS += -L$(TORCH_PATH)/install/lib -lluajit -lluaT -lTH
 endif
 
 SRC = $(wildcard src/*.cc src/*/*.cc src/*/*/*.cc)
